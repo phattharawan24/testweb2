@@ -2,9 +2,11 @@ function calculate(){
     ttt();
     setTimeout(function(){
         var sum=0;
+        var gen= document.getElementById('gen').value;
+        console.log(gen);
         var kw= document.getElementById('kw').value;
         var hr = document.getElementById('num1').value;
-        sum = kw*(hr*4);
+        sum = kw*(hr*gen);
         document.getElementById('hour').value = sum.toFixed(2);
         sum = sum / 0.7;
         document.getElementById('drive').value = sum.toFixed(2);
