@@ -67,7 +67,7 @@
     background-color: white;
     color: black;
     border: 2px solid #4CAF50;
-    padding: 8px;
+    padding: 10px;
   }
 
   .button1:hover {
@@ -80,80 +80,118 @@
   .container_cal {
     display: grid;
     justify-content: center;
-    text-align: start;
     background-color: #9ddfd3;
-    width: auto;
+    padding: 10px;
   }
 
   .boxcal {
+    width: auto;
+    height: 475x;
     background-color: #ffffff;
     border-radius: 20px;
     margin: 20px;
-    padding: 10px;
-    text-align: start;
+    padding: 20px;
+    align-content: center;
   }
 
   .evpic {
-    
     width: 60px;
-    float:right;
     position: absolute;
-    left: 1285px;
-    top: 230px;
+    left: 1279px;
+    top: 630px;
   }
 
   .container_car {
     float: left;
     width: 120px;
   }
-
+  .button1.sub {
+    width: 13%;
+  }
+  .button3 {
+    width: 35%;
+  }
+  .button4 {
+    width: 15%;
+  }
 </style>
 <style>
   /*กล่องข้อความ*/
-  input[type=text],[type="submit"] {
-    width: 10%;
+  input[type=text],
+  [type="submit"] {
     padding: 5px 9px;
-    margin: 8px 0;
+    margin: 2px 0;
     box-sizing: border-box;
     border: 3px solid #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-}
+  }
 
-input[type=text]:focus {
+  input[type=text]:focus {
     border: 3px solid #555;
     background-color: lightblue;
-}
+  }
+
+  .text5 {
+    text-align: center;
+  }
+
+  .option1 {
+    text-align: center;
+  }
+
+  .group4 {
+    text-align: -webkit-center;
+  }
+  .group4 .box1 {
+    width: 29%;
+    margin: 10px;
+    line-height: 15px;
+    justify-content: center;
+  }
 
 </style>
+
 <body>
   <div class="container_cal">
     <div class="boxcal">
-      <p>
-      <h3>รู้หรือไม่...รถยนต์ระบบชาร์จไฟ <select name="gen" id="gen">
-          <option value="4" >PHEV</option>
-          <option value="4" >BEV</option>
+      <h2 style="text-align: center;">รู้หรือไม่...</h2>
+      <h3 style="text-align: center;">รถยนต์ชาร์จไฟแต่ละระบบวิ่งได้เท่าไหร่และใช้เงินเท่าไหร่</h3>
+      <div class="option1">
+        <select name="gen" id="gen" style="width: 180px;height: 30px;">
+          <option value="4">รถยนต์ระบบชาร์จไฟ PHEV</option>
+          <option value="4">รถยนต์ระบบชาร์จไฟ BEV</option>
         </select>
-        สามารถรับไฟได้ <select id="kw">
-          <option value="3.7">3.7 kW</option>
-          <option value="7.4">7.4 kW</option>
-          <option value="11">11 kW</option>
-          <option value="22">22 kW</option>
-        </select>
-        และชาร์จไฟจำนวน <input type="text" name="num1" id="num1"> ชั่วโมง
-        <input type="submit" value="calculate" onclick="calculate()" class="button1"><br>
-        "คุณจะเสียเงินในการชาร์จ <input type="text" disabled name="" id="hour"> บาท" และ รถสามารถวิ่งได้ <input
-          type="text" name="drive" id="drive" disabled> km"
-      </h3>
-      </p>
-      <p>*ค่าชาร์จไฟรถ EV ประมาณ 0.7-1 บาท/กิโลเมตร เมื่อเทียบค่าเติมน้ำมันรถทั่วไปประมาณ 3 บาท/กิโลเมตร
-        ทำให้สามารถประหยัดค่าเชื้อเพลิงรถไปได้มากกว่า 3 เท่า</p>
-    </div> 
-    <img src="https://sv1.picz.in.th/images/2021/05/27/PPHyDt.png" alt="PPHyDt.png" border="0" class="evpic" >
-      <div id="divCar" class="container_car"><img src="https://sv1.picz.in.th/images/2021/05/27/PPKInt.png" alt="PPKInt.png"
-          border="0" class="carrun">
+      </div>
+
+      <div class="group4">
+        <div class="box1">
+          <h3 >รับไฟได้</h3>
+          <select id="kw" style="width: 100px;height: 25px;" class="">
+            <option value="3.7">3.7 kW</option>
+            <option value="7.4">7.4 kW</option>
+            <option value="11">11 kW</option>
+            <option value="22">22 kW</option>
+          </select>
+        </div>
+        <div class="box1">
+          <h3>จำนวนชั่วโมง</h3>&emsp;&emsp;&emsp;<input type="text" name="num1" id="num1" class="button3"> ชั่วโมง
+        </div>
+      </div>
+      <p style="text-align: center;">&nbsp;<input type="submit" value="calculate" onclick="calculate()" class="button1 sub"></p>
+        <h3 style="text-align: center">"คุณจะเสียเงินในการชาร์จ <input type="text" disabled name="" id="hour" class="button4"> บาท 
+          <br> และ รถสามารถวิ่งได้ <input
+        type="text" name="drive" id="drive" disabled class="button4"> km"</h3>
+      <p><br> *ค่าชาร์จไฟรถ EV ประมาณ 0.7-1 บาท/กิโลเมตร เมื่อเทียบค่าเติมน้ำมันรถทั่วไปประมาณ 3 บาท/กิโลเมตร
+      ทำให้สามารถประหยัดค่าเชื้อเพลิงรถไปได้มากกว่า 3 เท่า</p>
+  </div><br>
+  <img src="https://sv1.picz.in.th/images/2021/05/27/PPHyDt.png" alt="PPHyDt.png" border="0" class="evpic">
+  <div id="divCar" class="container_car"><img src="https://sv1.picz.in.th/images/2021/05/27/PPKInt.png" alt="PPKInt.png"
+      border="0" class="carrun">
     </div>
+    
+  </div>
 </body>
 
 </html>
